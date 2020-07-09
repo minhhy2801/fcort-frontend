@@ -21,8 +21,9 @@
     "regenerator-runtime": "^0.13.5"
   },
   "scripts": {
-    "start": "webpack-dev-server --open",
-    "build": "webpack",
+    "start": "webpack-dev-server --open --mode development",
+    "dev": "webpack --mode development",
+    "build": "webpack --mode production",
     "lint": "eslint ./src",
     "lint:fix": "eslint --fix .",
     "format": "prettier --write \"**/*.+(js|jsx|json|css|md)\""
