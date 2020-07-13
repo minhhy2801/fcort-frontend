@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import AvatarEditor from 'react-avatar-editor';
 import './styles.scss';
 const ImageCrop = ({imageSrc, setEditorRef, scaleValue, onScaleChange}) => (
@@ -33,12 +32,5 @@ const ImageCrop = ({imageSrc, setEditorRef, scaleValue, onScaleChange}) => (
     </div>
   </div>
 );
-
-ImageCrop.propTypes = {
-  setEditorRef: PropTypes.func.isRequired,
-  onCrop: PropTypes.func.isRequired,
-  scaleValue: PropTypes.number.isRequired,
-  onScaleChange: PropTypes.func.isRequired,
-};
 
 export default ImageCrop;

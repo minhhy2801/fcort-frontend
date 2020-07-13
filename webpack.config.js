@@ -8,11 +8,11 @@ dotenv.config();
 
 const config = (_, argv) => {
   return {
-    mode: argv,
+    mode: argv.mode,
     entry: path.resolve(__dirname, 'src', 'index.js'),
     output: {
       path: path.resolve(__dirname, 'build/'),
-      filename: '[contenthash:8].js',
+      filename: argv.mode === 'production' ? '[contenthash:8].js' : '[name].[hash].js',
       publicPath: '/',
     },
     module: {
@@ -96,6 +96,7 @@ const config = (_, argv) => {
       port: process.env.APP_ROOT_PORT || 3000,
       historyApiFallback: true,
       hot: true,
+      watchContentBase: true,
     },
   };
 };
